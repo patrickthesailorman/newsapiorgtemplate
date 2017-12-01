@@ -24,6 +24,8 @@
       $('#source').submit(function(event) {
         event.preventDefault();
        // alert(document.getElementById("selection").value)
+       document.getElementById("news").innerHTML = "";
+        
       
       
       $.ajax({
@@ -39,16 +41,16 @@
                    headline.setAttribute("Id", "Id" + i)
                   link.innerHTML = data2.articles[i].title;
                   link.href = data2.articles[i].url;
-                  document.getElementById("source").appendChild(headline);
+                  document.getElementById("news").appendChild(headline);
                   document.getElementById('Id' + i).appendChild(link);
                   
                   var image = document.createElement("IMG");
                   image.setAttribute("src", data2.articles[i].urlToImage)
-                  document.getElementById("source").appendChild(image);
+                  document.getElementById("news").appendChild(image);
 
                   var descrip = document.createElement("H4");
                   descrip.innerHTML= data2.articles[i].description;
-                  document.getElementById("source").appendChild(descrip);
+                  document.getElementById("news").appendChild(descrip);
               }
           } 
       },
