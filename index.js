@@ -23,7 +23,7 @@
       
       $('#source').submit(function(event) {
         event.preventDefault();
-       alert(document.getElementById("selection").value)
+       // alert(document.getElementById("selection").value)
       
       
       $.ajax({
@@ -35,10 +35,17 @@
               console.log(data2);
               for(var i=0; i < data2.articles.length; i++) {
                   var headline = document.createElement("H2");
-                  console.log(headline);
                   // headline.setAttribute("value", data2.articles[i].title)
                   headline.innerHTML= data2.articles[i].title;
                   document.getElementById("source").appendChild(headline);
+                  
+                  var image = document.createElement("IMG");
+                  image.setAttribute("src", data2.articles[i].urlToImage)
+                  document.getElementById("source").appendChild(image);
+
+                  // var a = document.createElement("A");
+                  // a.innerHTML= data2.articles[i].url + data2.articles[i].description;
+                  // document.getElementById("source").appendChild(a);
               }
           } 
       },
