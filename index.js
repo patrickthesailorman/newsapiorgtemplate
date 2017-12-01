@@ -33,26 +33,22 @@
       success: function(data2) {
           if(data2.status === "ok"){
               console.log(data2);
-              for(var i=0; i < data2.articles.length; i++) {
+              for(var i=0; i < data2.articles.length; i ++) {
                   var headline = document.createElement("H2");
                   var link = document.createElement('a');
                    headline.setAttribute("Id", "Id" + i)
-                  link.innerHTML= data2.articles[i].title;
+                  link.innerHTML = data2.articles[i].title;
                   link.href = data2.articles[i].url;
                   document.getElementById("source").appendChild(headline);
                   document.getElementById('Id' + i).appendChild(link);
-                  
-                  // link.textContent = 'link';
-                  // link.href = data2.articles[i].url;
-                  // document.getElementById('source').appendChild(link);
                   
                   var image = document.createElement("IMG");
                   image.setAttribute("src", data2.articles[i].urlToImage)
                   document.getElementById("source").appendChild(image);
 
-                  // var a = document.createElement("A");
-                  // a.innerHTML= data2.articles[i].url + data2.articles[i].description;
-                  // document.getElementById("source").appendChild(a);
+                  var descrip = document.createElement("H4");
+                  descrip.innerHTML= data2.articles[i].description;
+                  document.getElementById("source").appendChild(descrip);
               }
           } 
       },
