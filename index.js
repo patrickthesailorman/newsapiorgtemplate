@@ -38,11 +38,14 @@ $(document).ready(function() {
 				if (data2.status === "ok") {
 					console.log(data2);
 					for (var i = 0; i < data2.articles.length; i++) {
+					 // var block = document.createElement("DIV");
 						var headline = document.createElement("H2");
 						var link = document.createElement('a');
+						// block.setAttribute("class", "Box" + i)
 						headline.setAttribute("Id", "Id" + i)
 						link.innerHTML = data2.articles[i].title;
 						link.href = data2.articles[i].url;
+						
 						document.getElementById("news").appendChild(headline);
 						document.getElementById('Id' + i).appendChild(link);
 						var image = document.createElement("IMG");
@@ -51,18 +54,13 @@ $(document).ready(function() {
 						var descrip = document.createElement("H4");
 						descrip.innerHTML = data2.articles[i].description;
 						document.getElementById("news").appendChild(descrip);
+						// document.getElementById("news").appendChild(block);
 					}
 				}
 			},
-			// error: function(error) {
-			//  console.log("failed");
-			// }
 		})
 	})
 });
-//   .done(function( data ) {
-//       console.log( data );
-//       console.log( data ).status;
-//   });
+
 
   

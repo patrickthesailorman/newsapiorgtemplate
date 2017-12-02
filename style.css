@@ -1,0 +1,55 @@
+body {
+   background: lightgrey;
+}
+
+h1 {
+    color: blue;
+}
+
+p {
+    color: green;
+}
+
+.btn-primary:hover {
+    background: white;
+    color: blue;
+}
+
+#news {
+    background: white;
+    float: left;
+    align-items: center;
+    /*max-height: 200px;*/
+    /*max-width: 30%;*/
+    margin: 5px;
+    border: 2px solid black;
+    padding: 5px;
+    /*overflow: auto;*/
+}
+/*.Box {*/
+/*    float: right;*/
+/*    display: grid;*/
+/*    max-height: 200px;*/
+/*    max-width: 30%;*/
+/*    margin:10px;*/
+/*    padding: 5px;*/
+/*    border: 2px solid black;*/
+/*}*/
+H2 {
+    display: inline-flex;
+    max-height: 200px;
+    max-width: 600px;
+}
+IMG {
+    display: flex;
+    /*float: right;*/
+    max-height: 400px;
+    max-width: 600px; 
+    border: 2px solid blue;
+}
+H4 {
+    display: inline-flex;
+    color: green;
+    max-height: 200px;
+    max-width: 600px; 
+}
