@@ -19,7 +19,6 @@ $(document).ready(function() {
 					source.innerHTML = data.sources[i].name;
 					document.getElementById('selection').appendChild(source);
 				}
-				console.log("options added");
 			}
 		}
 	})
@@ -34,25 +33,28 @@ $(document).ready(function() {
 				apiKey: APIKEY
 			},
 			success: function(data2) {
-				console.log("i ran");
 				if (data2.status === "ok") {
 					console.log(data2);
 					for (var i = 0; i < data2.articles.length; i++) {
 						var theDiv = document.createElement("DIV");
 						var headline = document.createElement("H2");
-						var link = document.createElement('a');
+						var link = document.createElement('A');
+						var descrip = document.createElement("H4");
+						var image = document.createElement("IMG");
 						headline.setAttribute("Id", "Id" + i)
 						link.innerHTML = data2.articles[i].title;
 						link.href = data2.articles[i].url;
-						theDiv.setAttribute("class", "boxes")
-						theDiv.appendChild(headline);
-						headline.appendChild(link);
-						var image = document.createElement("IMG");
-						image.setAttribute("src", data2.articles[i].urlToImage)
-						theDiv.appendChild(image);
-						var descrip = document.createElement("H4");
 						descrip.innerHTML = data2.articles[i].description;
+						image.setAttribute("src", data2.articles[i].urlToImage)
+						theDiv.setAttribute("class", "row")
+						theDiv.setAttribute("headline", data2.articles[i].title)
+						theDiv.setAttribute("descrip", data2.articles[i].description)
+						theDiv.setAttribute("image", data2.articles[i].urlToImage)
+						headline.appendChild(link);
+						theDiv.appendChild(headline);
 						theDiv.appendChild(descrip);
+						theDiv.appendChild(image);
+						
 						document.getElementById("news").appendChild(theDiv);
 					}
 				}

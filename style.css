@@ -1,5 +1,5 @@
 body {
-   background: lightgrey;
+   background: beige;
 }
 
 h1 {
@@ -16,36 +16,48 @@ p {
 }
 
 #news {
-    background: white;
+    background: lightgrey;
     float: left;
     align-items: center;
-    margin: 5px;
+    margin: 15px;
     border: 2px solid black;
-    padding: 25px;
+    padding: 15px;
     /*overflow: auto;*/
 }
 
-H2 {
+.row {
     display: inline-flex;
-    max-height: 200px;
+    flex-direction: row;
+    background: white;
+    max-height: 250px;
     max-width: 100%;
+    margin: 15px;
+    padding: 2px;
+}
+
+H2 {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    max-height: 200px;
+    max-width: 350px;
 }
 
 IMG {
     display: flex;
     flex-direction: column;
-    float: right;
     max-height: 200px;
     max-width: 300px; 
     border: 2px solid blue;
+    margin: 5px;
 }
 
 H4 {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
-    float: left;
+    margin: 5px;
     color: green;
     font-weight: bold;
-    max-height: 600px;
-    max-width: 400px; 
+    max-height: 200px;
+    max-width: 300px; 
 }
