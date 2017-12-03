@@ -46,7 +46,8 @@ $(document).ready(function() {
 						link.href = data2.articles[i].url;
 						descrip.innerHTML = data2.articles[i].description;
 						image.setAttribute("src", data2.articles[i].urlToImage)
-						theDiv.setAttribute("class", "row")
+						image.setAttribute("class", "img-fluid img-thumbnail")
+						theDiv.setAttribute("class", "col-xs-12; row")
 						theDiv.setAttribute("headline", data2.articles[i].title)
 						theDiv.setAttribute("descrip", data2.articles[i].description)
 						theDiv.setAttribute("image", data2.articles[i].urlToImage)
