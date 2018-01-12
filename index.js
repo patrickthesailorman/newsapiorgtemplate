@@ -7,7 +7,6 @@ $(document).ready(function() {
 		data: {
 			language: "en",
 			country: "us",
-			category: "technology",
 			apiKey: APIKEY
 		},
 		success: function(data) {
@@ -20,8 +19,10 @@ $(document).ready(function() {
 					document.getElementById('selection').appendChild(source);
 				}
 			}
+		
 		}
 	})
+	
 	$('#source').submit(function(event) {
 		event.preventDefault();
 		document.getElementById("news").innerHTML = "";
